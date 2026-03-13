@@ -1,25 +1,32 @@
-Teste_1 = 
-("Este filme é maravilhoso e emocionante", "pos"),
-("Gostei muito da atuação dos personagens", "pos"),
-("A história é inspiradora e muito bem escrita", "pos"),
-("Que experiência incrível e divertida", "pos"),
-("O roteiro é péssimo e muito cansativo", "neg"),("Não gostei do final, achei bem ruim", "neg"),
-("Filme horrível, perdi meu tempo assistindo", "neg"),
-("Atuação fraca e direção amadora", "neg"),
-("O filme é lento e extremamente chato", "neg"),
-("Simplesmente espetacular, recomendo a todos", "pos")
+Teste_1 (Contextos de Gírias e Intensificadores)
+Este bloco foca em como algoritmos lidam com linguajar informal e palavras que, isoladas, podem parecer negativas, mas no contexto são positivas.
 
+Teste_1 = [
+    "O show foi animal, curti muito!",               # Gíria positiva
+    "Nossa, que filme sinistro de bom!",             # Ambiguidade (sinistro = bom)
+    "Achei o roteiro meio bosta, sinceramente.",     # Informal negativo
+    "O vilão é muito foda, roubou a cena.",          # Palavrão com conotação positiva
+    "Filme bem meia-boca, esperava mais."            # Expressão idiomática negativa
+]
 
-Teste_2 = 
-("O elenco era demais, mas a história não me convenceu.", "neg"),
-("Não é que o filme seja ruim, mas achei bem cansativo.", "neg"),
-("A fotografia é linda, porém o roteiro é péssimo.", "neg"),
-("Gostei da atuação, mas o final deixou a desejar.", "neg"),
-("É um filme ok, nem bom, nem ruim.", "neg")
+Teste_2 (Ironia e Contradição - Classificação "neg")
+Focado em frases que começam com um elogio, mas terminam invalidando a experiência.
 
-Teste_3 = 
-("O filme é bom, mas não é espetacular.", "pos"),
-("A atuação foi boa, mas o roteiro deixou a desejar.", "pos"),
-("Não é que o filme seja ruim, mas achei bem cansativo.", "pos"),
-("A fotografia é linda, porém o roteiro é péssimo.", "pos"),
-("Gostei da atuação, mas o final deixou a desejar.", "pos")
+Teste_2 = [
+    "O figurino é nota dez, pena que o filme é nota zero.", "neg",
+    "Adorei ter gastado 50 reais para dormir no cinema.", "neg",
+    "Se o objetivo era ser o pior do ano, eles acertaram.", "neg",
+    "É uma obra de arte para quem gosta de perder tempo.", "neg",
+    "Visualmente incrível, mas a história é um vazio total.", "neg"       
+]
+
+Teste_3 (Ambiguidade e Neutralidade - Classificação "pos")
+Focado em críticas construtivas ou opiniões moderadas que ainda pendem para o lado positivo.
+
+Teste_3 = [
+    "Apesar dos erros técnicos, a mensagem é bonita.", "pos",
+    "Não é uma obra-prima, mas diverte bastante.", "pos",
+    "Mesmo sendo longo, você nem percebe o tempo passar.", "pos",
+    "Vale o ingresso apenas pela cena final.", "pos",
+    "O filme entrega exatamente o que promete no trailer.", "pos"
+]

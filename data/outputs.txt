@@ -1,9 +1,23 @@
---- RESULTADOS DOS EXPERIMENTOS ---
-Frase: 'O roteiro é muito bom' -> Sentimento: neg
-Frase: 'O filme é terrível e chato' -> Sentimento: neg
-Frase: 'Não é que o filme seja ruim, mas cansa' -> Sentimento: neg
-Frase: 'Nossa, que filme maravilhoso, dormi todo' -> Sentimento: pos
-Frase: 'O som estava muito alto' -> Sentimento: pos
+ -- RESULTADOS DOS EXPERIMENTOS (TESTE_1)---
+Frase: 'O show foi animal, curti muito!' -> Sentimento: pos
+Frase: 'Nossa, que filme sinistro de bom!' -> Sentimento: neg
+Frase: 'Achei o roteiro meio bosta, sinceramente.' -> Sentimento: neg
+Frase: 'O vilão é muito foda, roubou a cena.' -> Sentimento: pos
+Frase: 'Filme bem meia-boca, esperava mais.' -> Sentimento: neg
+
+--- PALAVRAS MAIS INFORMATIVAS ---
+Most Informative Features
+                   filme = True              neg : pos    =      1.7 : 1.0
+                   filme = None              pos : neg    =      1.3 : 1.0
+                   achei = None              pos : neg    =      1.2 : 1.0
+                 amadora = None              pos : neg    =      1.2 : 1.0
+              assistindo = None              pos : neg    =      1.2 : 1.0
+
+
+-- RESULTADOS DOS EXPERIMENTOS (TESTE_2)---
+
+Frase: 'Visualmente incrível, mas a história é um vazio total.' -> Sentimento: pos
+Frase: 'neg' -> Sentimento: pos
 
 --- PALAVRAS MAIS INFORMATIVAS ---
 Most Informative Features

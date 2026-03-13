@@ -27,7 +27,7 @@ base_treino = [
 ]
 
 # 2. Pré-processamento
-stop_words = set(stopwords.words('a, as, o, os, ao, aos, à, às, de, do, da, dos, das, em, no, na, nos, nas, um, uma, uns, umas, com, para, por, per, pela, pelas, pelo, pelos, sem, sob, sobre, até, ante, após, desde, entre, trás.'))
+stop_words = set(stopwords.words('portuguese'))
 
 def preprocessar(texto):
     # Tokenização e conversão para minúsculas
@@ -46,11 +46,10 @@ classifier = NaiveBayesClassifier.train(featuresets)
 
 # 4. EXPERIMENTOS (Testes formais para o relatório)
 testes = [
-    "O show foi animal, curti muito!",               # Gíria positiva
-    "Nossa, que filme sinistro de bom!",             # Ambiguidade (sinistro = bom)
-    "Achei o roteiro meio bosta, sinceramente.",     # Informal negativo
-    "O vilão é muito foda, roubou a cena.",          # Palavrão com conotação positiva
-    "Filme bem meia-boca, esperava mais."            # Expressão idiomática negativa
+    "Não é uma obra-prima, mas diverte bastante.", "pos",
+    "Mesmo sendo longo, você nem percebe o tempo passar.", "pos",
+    "Vale o ingresso apenas pela cena final.", "pos",
+    "O filme entrega exatamente o que promete no trailer.", "pos"           # Expressão idiomática negativa
 ]
 
 print("--- RESULTADOS DOS EXPERIMENTOS ---")
