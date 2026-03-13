@@ -14,15 +14,20 @@ nltk.download('punkt_tab') # <--- linha adicionada p/ correção erro de compati
 # 1. Base de Dados de Treino (Exemplo simplificado para reprodução)
 # Em um cenário real, carregaríamos um CSV com milhares de linhas.
 base_treino = [
-("O elenco era demais, mas a história não me convenceu.", "neg"),
-("Não é que o filme seja ruim, mas achei bem cansativo.", "neg"),
-("A fotografia é linda, porém o roteiro é péssimo.", "neg"),
-("Gostei da atuação, mas o final deixou a desejar.", "neg"),
-("É um filme ok, nem bom, nem ruim.", "neg")
+    ("Este filme é maravilhoso e emocionante", "pos"),
+    ("Gostei muito da atuação dos personagens", "pos"),
+    ("A história é inspiradora e muito bem escrita", "pos"),
+    ("Que experiência incrível e divertida", "pos"),
+    ("O roteiro é péssimo e muito cansativo", "neg"),
+    ("Não gostei do final, achei bem ruim", "neg"),
+    ("Filme horrível, perdi meu tempo assistindo", "neg"),
+    ("Atuação fraca e direção amadora", "neg"),
+    ("O filme é lento e extremamente chato", "neg"),
+    ("Simplesmente espetacular, recomendo a todos", "pos")
 ]
 
 # 2. Pré-processamento
-stop_words = set(stopwords.words('portuguese'))
+stop_words = set(stopwords.words('a, as, o, os, ao, aos, à, às, de, do, da, dos, das, em, no, na, nos, nas, um, uma, uns, umas, com, para, por, per, pela, pelas, pelo, pelos, sem, sob, sobre, até, ante, após, desde, entre, trás.'))
 
 def preprocessar(texto):
     # Tokenização e conversão para minúsculas
@@ -41,11 +46,11 @@ classifier = NaiveBayesClassifier.train(featuresets)
 
 # 4. EXPERIMENTOS (Testes formais para o relatório)
 testes = [
-    "O roteiro é muito bom",                     # Óbvio Positivo
-    "O filme é terrível e chato",                # Óbvio Negativo
-    "Não é que o filme seja ruim, mas cansa",    # Negação (Desafio)
-    "Nossa, que filme maravilhoso, dormi todo",  # Sarcasmo (Desafio)
-    "O som estava muito alto"                    # Ambiguidade (Desafio)
+    "O show foi animal, curti muito!",               # Gíria positiva
+    "Nossa, que filme sinistro de bom!",             # Ambiguidade (sinistro = bom)
+    "Achei o roteiro meio bosta, sinceramente.",     # Informal negativo
+    "O vilão é muito foda, roubou a cena.",          # Palavrão com conotação positiva
+    "Filme bem meia-boca, esperava mais."            # Expressão idiomática negativa
 ]
 
 print("--- RESULTADOS DOS EXPERIMENTOS ---")
